@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="container mx-auto p-2">
+        <div class="p-2 bg-slate-300 rounded">
+            <div class="flex items-center justify-center gap-3" id="allCategoriesButtonContainer">
+            </div>
+        </div>
+        <div class="my-4">
+            <div class="flex justify-center items-center gap-2">
+                <input type="text" class="min-w-[500px] py-3 px-2 bg-slate-950 rounded text-white outline-0 font-semibold text-xl" placeholder="Type Here Category ID" id="input">
+                <button class="py-3 px-5 bg-slate-950 text-green-500 rounded font-semibold text-xl" onclick="handleSearch()">Search</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 justify-items-center gap-6" id="allNewsContainer">
+        </div>
+        <div class="mt-4 hidden" id="errorContainer">
+            <img src="https://assets-v2.lottiefiles.com/a/0e30b444-117c-11ee-9b0d-0fd3804d46cd/BkQxD7wtnZ.gif" alt="Image" class="max-w-[50%] mx-auto">
+        </div>
+        <div class="mt-4 hidden" id="loadingSpinner">
+            <img src="https://media.tenor.com/I6kN-6X7nhAAAAAi/loading-buffering.gif" alt="Image" class="mx-auto max-w-[100px]">
+        </div>
+        <dialog id="modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box w-11/12 max-w-5xl">
+                <form method="dialog" class="text-right">
+                    <button class="btn">Close</button>
+                </form>
+                <div class="mt-2" id="newsDetailContainer"></div>
+            </div>
+        </dialog>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
